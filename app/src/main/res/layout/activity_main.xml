@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📥 Video Saver"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:gravity="center"
+            android:paddingBottom="8dp" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YouTube · Instagram · TikTok · Twitter · Facebook e muito mais"
+            android:textSize="12sp"
+            android:textColor="@color/textSecondary"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- Campo de URL -->
+        <EditText
+            android:id="@+id/etUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cole o link do vídeo ou foto aqui"
+            android:inputType="textUri"
+            android:imeOptions="actionGo"
+            android:maxLines="3"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textSecondary"
+            android:background="@drawable/bg_edittext"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Botões de link -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btnPaste"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📋 Colar"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnGo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⬇️ Baixar"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="@color/primary" />
+        </LinearLayout>
+
+        <!-- Seletor de modo: Vídeo / Áudio / Foto -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de download:"
+            android:textColor="@color/textPrimary"
+            android:textStyle="bold"
+            android:paddingBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_edittext"
+            android:padding="8dp" />
+
+        <!-- Playlist -->
+        <CheckBox
+            android:id="@+id/cbPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Baixar playlist completa"
+            android:textColor="@color/textPrimary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Divisor -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Pasta de destino -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destino:"
+            android:textColor="@color/textPrimary"
+            android:textStyle="bold"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvDir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar em: Downloads/Video Saver (padrão)"
+            android:textColor="@color/textSecondary"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnPick"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📁 Escolher pasta"
+                android:layout_marginEnd="4dp"
+                style="?attr/materialButtonOutlinedStyle" />
+
+            <Button
+                android:id="@+id/btnDefault"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Usar padrão"
+                android:layout_marginStart="4dp"
+                style="?attr/materialButtonOutlinedStyle" />
+        </LinearLayout>
+
+        <!-- Atualizar yt-dlp -->
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔄 Atualizar yt-dlp"
+            android:layout_marginBottom="16dp"
+            style="?attr/materialButtonOutlinedStyle" />
+
+        <!-- Divisor -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Status / Jobs -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhum download em andamento.\nCompartilhe um link de outro app ou cole aqui."
+            android:textColor="@color/textSecondary"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:padding="8dp"
+            android:visibility="visible" />
+
+        <!-- Lista de downloads ativos -->
+        <LinearLayout
+            android:id="@+id/jobsBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,3 @@
+-keep class com.yausername.** { *; }
+-keep class com.videosaver.app.** { *; }
+-dontwarn com.yausername.**
