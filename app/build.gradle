@@ -43,8 +43,8 @@ android {
 
 dependencies {
     // YouTube-DL Android (wrapper do yt-dlp)
-    implementation 'com.github.yausername.youtubedl-android:library:0.17.+'
-    implementation 'com.github.yausername.youtubedl-android:ffmpeg:0.17.+'
+   implementation 'com.github.yausername.youtubedl-android:library:0.14.+'
+implementation 'com.github.yausername.youtubedl-android:ffmpeg:0.14.+'
 
     // AndroidX
     implementation 'androidx.core:core-ktx:1.12.0'
